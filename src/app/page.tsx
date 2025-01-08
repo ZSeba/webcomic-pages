@@ -1,18 +1,14 @@
-import Image from "next/image";
-
+import React, { Suspense } from "react";
 import { fetchPages } from "./lib/data";
+import { PageViewer } from "./ui/pageViewer";
 
-export default async function Home() {
+const Home = async () => {
   const pages = await fetchPages();
   return (
-    <div>
-      <Image
-        aria-hidden
-        src="https://drive.google.com/uc?export=view&id=17YoKgyaBifcxtXE4xGRfm_ztDgLSavbz"
-        alt="Window icon"
-        width={900}
-        height={1400}
-      />
-    </div>
+    <Suspense>
+      <PageViewer pages={pages} />
+    </Suspense>
   );
 }
+
+export default Home;

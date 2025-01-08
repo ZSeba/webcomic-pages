@@ -1,0 +1,1 @@
+export const PageViewerSkeleton = () => <div className="w-full h-full bg-slate-300" />
