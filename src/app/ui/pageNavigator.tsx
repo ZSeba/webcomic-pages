@@ -1,5 +1,6 @@
 import { Button } from './button';
 import { Page } from '../lib/definitions';
+import { caveat } from './fonts';
 
 export type PageNavigatorProps = {
   pages: Page[],
@@ -22,7 +23,7 @@ export const PageNavigator = ({ pages, currentPage, setCurrentPage } : PageNavig
       >
         {"<"}
       </Button>
-      <div className="flex items-center">
+      <div className={`${caveat.className} text-4xl flex items-center`}>
         {`Page ${currentPage} of ${pages.length}`}
       </div>
       <Button
