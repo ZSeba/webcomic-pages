@@ -20,6 +20,10 @@ export const PageViewer = ({ pages }: PageViewerProps ) => {
       </h1>
       <PageImage page={shownPage} />
       <PageNavigator pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <footer>
+        <p className={`${caveat.className} text-sm text-center`}>{"Website by Sebastian Vidal"}</p>
+        <p className={`${caveat.className} text-sm text-center`}>{"Art by Sebastian Vidal and Story by Keyo"}</p>
+      </footer>
     </>
   );
 }
