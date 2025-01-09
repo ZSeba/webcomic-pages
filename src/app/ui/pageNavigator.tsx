@@ -23,9 +23,9 @@ export const PageNavigator = ({ pages, currentPage, setCurrentPage } : PageNavig
       >
         {"<"}
       </Button>
-      <div className={`${caveat.className} text-4xl sm:text-xl flex items-center`}>
+      <p className={`${caveat.className} text-2xl`}>
         {`Page ${currentPage} of ${pages.length}`}
-      </div>
+      </p>
       <Button
         disabled={currentPage === pages.length}
         onClick={() => setCurrentPage(currentPage + 1)}
