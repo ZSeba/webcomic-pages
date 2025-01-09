@@ -1,5 +1,5 @@
 'use client';
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 
 import { Page } from '../lib/definitions';
 import { PageImage } from './pageImage';
@@ -13,6 +13,23 @@ export type PageViewerProps = {
 export const PageViewer = ({ pages }: PageViewerProps ) => {
   const [ currentPage, setCurrentPage ] = useState(1);
   const shownPage = pages.find(page => page.number == currentPage) || pages[0];
+
+  //Listen to key presses to navigate pages
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      switch(event.key) {
+        case "ArrowLeft":
+          if (currentPage > 1) setCurrentPage(currentPage - 1);
+          break;
+        case "ArrowRight":
+          if (currentPage < pages.length) setCurrentPage(currentPage + 1);
+          break;
+      }
+    }
+    document.addEventListener("keydown", handleKeyPress);
+    return () => document.removeEventListener("keydown", handleKeyPress);
+  }, [currentPage]);
+
   return (
     <>
       <h1 className={`${caveat.className} font-sans text-2xl lg:text-9xl flex justify-center m-2`}>
