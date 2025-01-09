@@ -27,6 +27,7 @@ export const PageViewer = ({ pages }: PageViewerProps ) => {
       }
     }
     document.addEventListener("keydown", handleKeyPress);
+    // cleanup listener after component unmounts
     return () => document.removeEventListener("keydown", handleKeyPress);
   }, [currentPage]);
 
