@@ -18,7 +18,9 @@ const sortPages = (pages: Page[]): Page[] => {
 export const fetchPages = async (): Promise<Page[]> => {
   try {
     const data = await sql<PageDTO>`SELECT * FROM pages`;
-    return mapPageDTO(data.rows);
+    const pages = mapPageDTO(data.rows);
+    const sortedPages = sortPages(pages);
+    return sortedPages;
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch pages.');

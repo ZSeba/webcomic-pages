@@ -7,9 +7,11 @@ export type PageImageProps = {
 }
 
 export const PageImage = ({ page } : PageImageProps) => 
-  <div className='flex justify-center'>
+  <div className='flex justify-center p-2'>
     <Image
+      priority
       aria-hidden
+      className='border-black border-2 '
       src={page.imageURL}
       alt={`Page ${page.number}`}
       width={900}

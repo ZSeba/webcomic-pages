@@ -10,10 +10,11 @@ export type PageViewerProps = {
 }
 
 export const PageViewer = ({ pages }: PageViewerProps ) => {
-  const [ currentPage, setCurrentPage ] = useState(0);
+  const [ currentPage, setCurrentPage ] = useState(1);
+  const shownPage = pages.find(page => page.number == currentPage) || pages[0];
   return (
     <>
-      <PageImage page={pages[currentPage]} />
+      <PageImage page={shownPage} />
       <PageNavigator pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </>
   );
