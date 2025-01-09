@@ -4,6 +4,7 @@ import React, { useState} from 'react';
 import { Page } from '../lib/definitions';
 import { PageImage } from './pageImage';
 import { PageNavigator } from './pageNavigator';
+import { caveat } from './fonts';
 
 export type PageViewerProps = {
   pages: Page[];
@@ -14,7 +15,7 @@ export const PageViewer = ({ pages }: PageViewerProps ) => {
   const shownPage = pages.find(page => page.number == currentPage) || pages[0];
   return (
     <>
-      <h1 className='font-sans text-4xl flex justify-center m-2'>
+      <h1 className={`${caveat.className} font-sans text-4xl flex justify-center m-2`}>
         The Cat Defenders!
       </h1>
       <PageImage page={shownPage} />
