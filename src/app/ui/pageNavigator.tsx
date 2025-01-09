@@ -23,7 +23,7 @@ export const PageNavigator = ({ pages, currentPage, setCurrentPage } : PageNavig
       >
         {"<"}
       </Button>
-      <div className={`${caveat.className} text-4xl flex items-center`}>
+      <div className={`${caveat.className} text-4xl sm:text-xl flex items-center`}>
         {`Page ${currentPage} of ${pages.length}`}
       </div>
       <Button
