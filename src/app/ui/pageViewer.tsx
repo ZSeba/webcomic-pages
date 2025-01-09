@@ -14,6 +14,9 @@ export const PageViewer = ({ pages }: PageViewerProps ) => {
   const shownPage = pages.find(page => page.number == currentPage) || pages[0];
   return (
     <>
+      <h1 className='font-sans text-4xl flex justify-center m-2'>
+        The Cat Defenders!
+      </h1>
       <PageImage page={shownPage} />
       <PageNavigator pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </>
